@@ -1,6 +1,10 @@
-# Vocode Community
+<div align="center">
 
-Welcome to the Vocode Community repository! This is the central hub for all open-source and community-driven resources for Vocode, a cross-platform mobile app designed to help users quickly create and organize notes in their existing systems.
+  <h3>Vocode Community</h3>
+  <h4>The central hub for open-source and community-driven resources for Vocode</h4>
+  <br />
+
+</div>
 
 ## Repository Contents
 - **Core Plugins**: The essential plugins that come with Vocode to provide the basic functionality.
@@ -10,7 +14,17 @@ Welcome to the Vocode Community repository! This is the central hub for all open
 
 We welcome contributions from the community! If you have ideas for plugins or improvements, feel free to open an issue or submit a pull request.
 
-For more information on how to develop plugins for Vocode, refer to the documentation.a
-License
+For more information on how to develop plugins for Vocode, refer to the documentation.
 
-This repository is licensed under the MIT License.
+This repository is licensed under the [MIT License](LICENSE,md)
+
+## Support
+
+For support, email bugs.viscouspotential@gmail.com.
+
+Consider [sponsoring](https://github.com/sponsors/ViscousPot)! Any help is hugely appreciated!
+
+
+## Authors
+
+- [@ViscousPot](https://github.com/ViscousPot)
