@@ -1,0 +1,11 @@
+[package]
+name = "Text_Injector"
+description = "A file writer plugin that allows users to insert formatted text at a specific location in a target file, based on a search string and customizable offset."
+version = "0.1.0"
+edition = "2021"
+permissions = [
+  "file",
+]
+
+[lib]
+crate-type = ["cdylib"]

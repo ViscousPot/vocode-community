@@ -1,0 +1,11 @@
+[package]
+name = "File_Saver"
+description = "A file creation plugin that automatically creates files in specified folders, using transcribed text as filenames."
+version = "0.1.0"
+edition = "2021"
+permissions = [
+  "file",
+]
+
+[lib]
+crate-type = ["cdylib"]
