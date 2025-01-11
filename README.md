@@ -1,5 +1,7 @@
 <div align="center">
 
+  <img src="https://github.com/user-attachments/assets/b18a689b-262b-4d00-8308-86629425f1d2" width="140" />
+
   <h3>Vocode Community</h3>
   <h4>The central hub for open-source and community-driven resources for Vocode</h4>
   <br />
