@@ -3,9 +3,6 @@ name: Process JSON File
 on:
   schedule:
     - cron: '0 * * * *'  # Runs every hour on the hour
-  push:
-    paths:
-      - 'core_plugins/plugins.json'
 
 jobs:
   process-json:
@@ -15,12 +12,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
+      - name: Get Latest Tag
+        id: get_tag
+        run: |
+          latest_tag=$(git describe --tags --abbrev=0)
+          echo "latest_tag=$latest_tag" >> $GITHUB_ENV
+
       - name: Process JSON
         run: |
           input_file="core_plugins/plugins.json"
           output_file="plugins.json"
           if [ -f "$input_file" ]; then
-            jq '{core: ., community: []}' "$input_file" > "$output_file"
+            jq --arg core_version "$latest_tag" \
+              '{core_version: $core_version, core: ., community: []}' "$input_file" > "$output_file"
           else
             echo "Input file not found: $input_file" && exit 1
           fi
