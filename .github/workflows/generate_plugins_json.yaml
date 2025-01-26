@@ -15,7 +15,7 @@ jobs:
       - name: Process JSON
         run: |
           input_file="core_plugins/plugins.json"
-          output_file="pluginstest.json"
+          output_file="plugins.json"
           if [ -f "$input_file" ]; then
             jq '{core: ., community: []}' "$input_file" > "$output_file"
           else
@@ -26,6 +26,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add pluginstest.json
-          git commit -m "Generated pluginstest.json"
+          git add plugins.json
+          git commit -m "Generated plugins.json"
           git push
