@@ -1,6 +1,7 @@
 name: Process JSON File
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 * * * *'  # Runs every hour on the hour
 
