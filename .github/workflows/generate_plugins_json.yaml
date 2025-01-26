@@ -1,12 +1,15 @@
 name: Process JSON File
 
 on:
+  schedule:
+    - cron: '0 * * * *'  # Runs every hour on the hour
   push:
     paths:
       - 'core_plugins/plugins.json'
 
 jobs:
   process-json:
+    name: Process and Update Plugins JSON File
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
