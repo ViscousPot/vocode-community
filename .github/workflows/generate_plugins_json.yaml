@@ -20,6 +20,7 @@ jobs:
             jq '{core: ., community: []}' "$input_file" > "$output_file"
           else
             echo "Input file not found: $input_file" && exit 1
+          fi
 
       - name: Commit and Push Changes
         run: |
