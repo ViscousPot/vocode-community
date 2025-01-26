@@ -1,10 +1,10 @@
 {
+  "core_version": "No tags found",
   "core": [
     {
       "name": "Text Injector",
       "description": "A file writer plugin that allows users to insert formatted text at a specific location in a target file, based on a search string and customizable offset.",
       "url": "./text_injector",
-      "version": "1.00.0",
       "permissions": [
         "file"
       ]
@@ -13,7 +13,6 @@
       "name": "Intent Sender",
       "description": "Sends arbitrary Android intents with customizable package name, class name, and action, including text as an extra, enabling integration with Tasker or other automation apps.",
       "url": "./intent_sender",
-      "version": "1.00.0",
       "permissions": [
         "intent"
       ]
