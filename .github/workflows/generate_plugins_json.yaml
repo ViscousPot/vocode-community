@@ -1,0 +1,30 @@
+name: Process JSON File
+
+on:
+  push:
+    paths:
+      - 'core_plugins/plugins.json'
+
+jobs:
+  process-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Process JSON
+        run: |
+          input_file="core_plugins/plugins.json"
+          output_file="pluginstest.json"
+          if [ -f "$input_file" ]; then
+            jq '{core: ., community: []}' "$input_file" > "$output_file"
+          else
+            echo "Input file not found: $input_file" && exit 1
+
+      - name: Commit and Push Changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add output.json
+          git commit -m "Generated output.json"
+          git push
