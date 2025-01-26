@@ -12,16 +12,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
-      - name: Install GitHub CLI
-        run: sudo apt-get install gh
+        with:
+          fetch-depth: 0
 
       - name: Get latest tag
         id: get_tag
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
-          latest_tag=$(gh release view --json tagName -q ".tagName")
+          git fetch --tags  # Fetch all tags from the remote
+          latest_tag=$(git describe --tags --abbrev=0)
           if [[ $latest_tag == v* ]]; then
             latest_tag=${latest_tag:1}
           fi
