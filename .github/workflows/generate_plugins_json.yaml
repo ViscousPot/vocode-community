@@ -25,25 +25,93 @@ jobs:
           fi
           echo "latest_tag=$latest_tag" >> $GITHUB_ENV
 
+
+      - name: Process Community Plugins and Get Latest Tags using GraphQL
+        id: get_community_tags
+        run: |
+          community_input="community_plugins.json"
+          community_data=$(cat "$community_input")
+          community_urls=$(echo "$community_data" | jq -r 'keys[] as $key | .[$key].url')
+
+          query="query {"
+
+          index=0
+          for url in $community_urls; do
+          repo_name=$(echo $url | sed 's/https:\/\/github.com\///' | sed 's/\.git$//')
+          IFS='/' read -r owner name <<< "$repo_name"
+          query="$query
+              repo$index: repository(owner: \"$owner\", name: \"$name\") {
+                  name
+                  tags: refs(refPrefix: \"refs/tags/\", first: 1, orderBy: {field: TAG_COMMIT_DATE, direction: DESC}) {
+                      edges {
+                          node {
+                              name
+                          }
+                      }
+                  }
+              }"
+          index=$((index + 1))
+          done
+
+          query="$query
+          }"
+
+          # echo "$query"
+
+          query_json=$(echo "$query" | jq -c -Rs '.')
+          # echo "$query_json"
+
+          # echo "{\"query\": \"$query_json\"}"
+
+          response=$(curl -s -X POST https://api.github.com/graphql \
+          -H "Authorization: bearer $GITHUB_TOKEN" \
+          -d "{\"query\": $query_json}")
+
+          echo "$response"
+
+          echo .
+
+          latest_tags="{}"
+          for ((i = 0; i < ${#community_urls[@]}; i++)); do
+              tag=$(echo "$response" | jq -r ".data.repo$i.tags.edges[0].node.name")
+              tag=$(echo "$tag" | sed 's/^v//')
+              echo "$tag"
+              if [[ "$tag" != "null" ]]; then
+                  url=${community_urls[$i]}
+                  latest_tags=$(echo $latest_tags | jq --arg url "$url" --arg tag "$tag" '. + {($url): $tag}')
+              fi
+          done
+
+          echo "latest_tags=$latest_tags" >> $GITHUB_ENV
+
       - name: Process JSON
         run: |
           core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
-
           output_file="plugins.json"
-          
+
           if [ -f "$core_input" ]; then
-            core_data=$(cat "$core_input")
+          core_data=$(cat "$core_input")
           else
-            echo "Core plugins file not found: $core_input" && exit 1
+          echo "Core plugins file not found: $core_input" && exit 1
           fi
           if [ -f "$community_input" ]; then
-            community_data=$(cat "$community_input")
+          community_data=$(cat "$community_input")
           else
-            community_data="[]"
+          community_data="[]"
           fi
-          echo "$core_data" | jq --arg core_version "$latest_tag" --argjson community "$community_data" \
-            '{core_version: $core_version, core: ., community: $community}' > "$output_file"
+
+          updated_community_data=$(echo "$community_data" | jq --argjson latest_tags "$latest_tags" '
+              map(
+                  . + {
+                  version: ($latest_tags[.url] // "unknown")
+                  }
+              )
+              ')
+
+          echo "$core_data" | jq -c --arg core_version "$latest_tag" --argjson community "$updated_community_data" \
+              '{core_version: $core_version, core: ., community: $community}' > "$output_file"
+
 
       - name: Commit and Push Changes
         run: |
