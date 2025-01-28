@@ -7,7 +7,7 @@ on:
 
 env:
   GH_TOKEN: ${{ github.token }}
-  
+
 jobs:
   process-json:
     name: Generate Plugins JSON File
@@ -28,13 +28,11 @@ jobs:
           fi
           echo "latest_tag=$latest_tag" >> $GITHUB_ENV
 
-
-      - name: Process Community Plugins and Get Latest Tags using GraphQL
-        id: get_community_tags
+      - name: Process JSON
         run: |
+          core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
-          community_data=$(cat "$community_input")
-          community_urls=$(echo "$community_data" | jq -r 'keys[] as $key | .[$key].url')
+          output_file="plugins.json"
 
           query="query {"
 
@@ -63,8 +61,6 @@ jobs:
 
           echo "$response"
 
-          echo .
-
           latest_tags="{}"
           for ((i = 0; i < ${#community_urls[@]}; i++)); do
               tag=$(echo "$response" | jq -r ".data.repo$i.tags.edges[0].node.name")
@@ -75,14 +71,6 @@ jobs:
                   latest_tags=$(echo $latest_tags | jq --arg url "$url" --arg tag "$tag" '. + {($url): $tag}')
               fi
           done
-
-          echo "latest_tags=$latest_tags" >> $GITHUB_ENV
-
-      - name: Process JSON
-        run: |
-          core_input="core_plugins/plugins.json"
-          community_input="community_plugins.json"
-          output_file="plugins.json"
 
           if [ -f "$core_input" ]; then
           core_data=$(cat "$core_input")
