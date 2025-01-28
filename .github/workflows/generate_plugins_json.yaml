@@ -3,7 +3,7 @@ name: Process JSON File
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'  # Runs every hour on the hour
+    - cron: '0 * * * *'
 
 jobs:
   process-json:
@@ -27,14 +27,23 @@ jobs:
 
       - name: Process JSON
         run: |
-          input_file="core_plugins/plugins.json"
+          core_input="core_plugins/plugins.json"
+          community_input="community_plugins.json"
+          
           output_file="plugins.json"
-          if [ -f "$input_file" ]; then
-            jq --arg core_version "$latest_tag" \
-              '{core_version: $core_version, core: ., community: []}' "$input_file" > "$output_file"
+          
+          if [ -f "$core_input" ]; then
+            core_data=$(cat "$core_input")
           else
-            echo "Input file not found: $input_file" && exit 1
+            echo "Core plugins file not found: $core_input" && exit 1
           fi
+          if [ -f "$community_input" ]; then
+            community_data=$(cat "$community_input")
+          else
+            community_data="[]"
+          fi
+          echo "$core_data" | jq --arg core_version "$latest_tag" --argjson community "$community_data" \
+            '{core_version: $core_version, core: ., community: $community}' > "$output_file"
 
       - name: Commit and Push Changes
         run: |
