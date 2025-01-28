@@ -57,6 +57,8 @@ jobs:
           query="$query
           }"
 
+          echo "$query"
+
           response=$(gh api graphql -f query="$query")
 
           echo "$response"
