@@ -33,7 +33,7 @@ jobs:
           core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
           output_file="plugins.json"
-          
+
           community_data=$(cat "$community_input")
           community_urls=$(echo "$community_data" | jq -r 'keys[] as $key | .[$key].url')
 
@@ -97,7 +97,7 @@ jobs:
               ')
 
           echo "$core_data" | jq -c --arg core_version "$latest_tag" --argjson community "$updated_community_data" \
-              '{core_version: $core_version, core: ., community: $community}' > "$output_file"
+              '{core_version: $core_version, core: ., community: $community}' | jq . > "$output_file"
 
 
       - name: Commit and Push Changes
