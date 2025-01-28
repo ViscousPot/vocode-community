@@ -56,16 +56,7 @@ jobs:
           query="$query
           }"
 
-          # echo "$query"
-
-          query_json=$(echo "$query" | jq -c -Rs '.')
-          # echo "$query_json"
-
-          # echo "{\"query\": \"$query_json\"}"
-
-          response=$(curl -s -X POST https://api.github.com/graphql \
-          -H "Authorization: bearer $GITHUB_TOKEN" \
-          -d "{\"query\": $query_json}")
+          response=$(gh api graphql -f query="$query")
 
           echo "$response"
 
