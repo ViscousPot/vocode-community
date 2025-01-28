@@ -30,12 +30,12 @@ jobs:
 
       - name: Process JSON
         run: |
+          core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
+          output_file="plugins.json"
+
           community_data=$(cat "$community_input")
           community_urls=$(echo "$community_data" | jq -r 'to_entries | .[].value.url')
-
-          core_input="core_plugins/plugins.json"
-          output_file="plugins.json"
 
           query="query {"
 
@@ -85,7 +85,10 @@ jobs:
           community_data="{}"
           fi
 
-          echo $community_data $latest_tags | jq --slurp 'reduce .[] as $item ({}; . * $item)' | jq . > "$output_file"
+          updated_community_data=$(echo $community_data $latest_tags | jq --slurp 'reduce .[] as $item ({}; . * $item)')
+
+          echo "$core_data" | jq -c --arg core_version "$latest_tag" --argjson community "$updated_community_data" \
+              '{core_version: $core_version, core: ., community: $community}' | jq . > "$output_file"
 
 
       - name: Commit and Push Changes
