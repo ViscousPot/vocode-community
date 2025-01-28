@@ -33,6 +33,9 @@ jobs:
           core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
           output_file="plugins.json"
+          
+          community_data=$(cat "$community_input")
+          community_urls=$(echo "$community_data" | jq -r 'keys[] as $key | .[$key].url')
 
           query="query {"
 
