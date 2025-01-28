@@ -5,6 +5,9 @@ on:
   schedule:
     - cron: '0 * * * *'
 
+env:
+  GH_TOKEN: ${{ github.token }}
+  
 jobs:
   process-json:
     name: Generate Plugins JSON File
@@ -28,8 +31,6 @@ jobs:
 
       - name: Process Community Plugins and Get Latest Tags using GraphQL
         id: get_community_tags
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           community_input="community_plugins.json"
           community_data=$(cat "$community_input")
