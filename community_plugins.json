@@ -1,0 +1,10 @@
+{
+    "example": {
+        "name": "Example Plugin",
+        "description": "An example plugin that serves as boilerplate for Vocode plugin developers.",
+        "url": "https://github.com/ViscousPot/vocode_example-plugin",
+        "permissions": [
+            "notification"
+        ]
+    }
+}
