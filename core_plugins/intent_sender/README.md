@@ -32,7 +32,7 @@ Specify the action to be used in the intent, which can be any valid Android inte
 When text is entered, the plugin sends an intent with the specified package name, class name, action, and text extra, which can be handled by the target app.
 
 ## License
-This plugin is licensed under the [MIT License](LICENSE).
+This plugin is licensed under the [MIT License](../../LICENSE.md).
 
 ## Support
 For any issues or questions, please contact support at [bugs.viscouspotential@gmail.com].

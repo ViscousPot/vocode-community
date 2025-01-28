@@ -35,7 +35,7 @@ Provide the path to a template file that defines the structure of the content.
 When a transcription is processed, the plugin will create a file named, e.g., `Transcript_20231225_101530.txt` in the target folder, using the specified content template.
 
 ## License
-This plugin is licensed under the [MIT License](LICENSE).
+This plugin is licensed under the [MIT License](../../LICENSE.md).
 
 ## Support
 For any issues or questions, please contact support at [bugs.viscouspotential@gmail.com].

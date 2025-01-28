@@ -36,7 +36,7 @@ Set the offset (in characters) from the found search string where the text will 
 The plugin will search for the string `<!-- Insert Point -->` in the file, and insert the formatted text `<!-- Prefix -->` `<!-- text goes here -->` `<!-- Suffix -->` 1 line before the line containing this string.
 
 ## License
-This plugin is licensed under the [MIT License](LICENSE).
+This plugin is licensed under the [MIT License](../../LICENSE.md).
 
 ## Support
 For any issues or questions, please contact support at [bugs.viscouspotential@gmail.com].
