@@ -1,4 +1,4 @@
-name: Process JSON File
+name: Generate Plugins JSON File
 
 on:
   workflow_dispatch:
@@ -7,7 +7,7 @@ on:
 
 jobs:
   process-json:
-    name: Process and Update Plugins JSON File
+    name: Generate Plugins JSON File
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -29,7 +29,7 @@ jobs:
         run: |
           core_input="core_plugins/plugins.json"
           community_input="community_plugins.json"
-          
+
           output_file="plugins.json"
           
           if [ -f "$core_input" ]; then
