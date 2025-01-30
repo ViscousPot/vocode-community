@@ -67,6 +67,9 @@ jobs:
           while read -r url; do
               tag=$(echo "$response" | jq -r ".data.repo$index.tags.edges[0].node.name")
               if [[ "$tag" != "null" ]]; then
+                  if [[ $tag == v* ]]; then
+                  tag=${tag:1}
+                  fi
                   id=$(echo "$community_data" | jq -r "keys[$index]")
                   latest_tags=$(echo $latest_tags | jq --arg id "$id" --arg tag "$tag" '. + {($id): {version: $tag}}')
               fi
