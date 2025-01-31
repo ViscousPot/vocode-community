@@ -1,0 +1,33 @@
+name: Check community_plugins.json
+
+on:
+  pull_request:
+    paths:
+      - 'community_plugins.json'
+    types: [opened, synchronize, reopened]
+
+jobs:
+  validate-json:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Validate JSON format
+        run: jq empty community_plugins.json
+
+      - name: Check for duplicate keys in community_plugins.json
+        run: |
+          if [[ $(diff -q <(jq --stream . community_plugins.json) <(jq tostream community_plugins.json)) ]]; then
+              echo "Duplicate keys found in community_plugins.json!"
+              exit 1
+          else
+              echo "No duplicate keys found in community_plugins.json"
+          fi
+
+      - name: Check for overlapping keys with core_plugins/plugins.json
+        run: |
+          if jq 'path(..) | select(length == 2) | join(".")' community_plugins.json core_plugins/plugins.json | sort | uniq -c | awk '$1 > 1 {print $2}' | grep .; then
+            echo "Overlapping keys found between community_plugins.json and core_plugins/plugins.json" >&2
+            exit 1
+          fi
