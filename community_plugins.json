@@ -7,7 +7,7 @@
             "notification"
         ]
     },
-    "example": {
+    "text_injector": {
         "name": "Example Plugin",
         "description": "An example plugin that serves as boilerplate for Vocode plugin developers.",
         "url": "ViscousPot/vocode_example-plugin",
