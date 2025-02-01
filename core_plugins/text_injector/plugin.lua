@@ -132,6 +132,7 @@ function remove(settings, data)
 
         file.writeString(remainingBytes)
         file.truncate(fileLength - string.len(originalText .. '\n'))
+        break
       end
     end
 
