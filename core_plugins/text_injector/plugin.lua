@@ -100,6 +100,8 @@ function edit(settings, data, newText)
         file.writeString(remainingBytes)
 
         file.truncate(fileLength + (string.len(text) - string.len(originalText .. '\n')))
+        file.close()
+        return true
       end
     end
 
@@ -132,7 +134,9 @@ function remove(settings, data)
 
         file.writeString(remainingBytes)
         file.truncate(fileLength - string.len(originalText .. '\n'))
-        break
+                
+        file.close()
+        return true
       end
     end
 
