@@ -6,7 +6,7 @@ Welcome to the `docs` folder of the **Vocode Community** repository! This folder
 
 While you can browse the Markdown files here, we strongly recommend visiting the official, built, and deployed version of the documentation for the best experience:
 
-🔗 **[Official Vocode Documentation](vocode-docs.netlify.app)**
+🔗 **[Official Vocode Documentation](https://vocode-docs.netlify.app)**
 
 The deployed site provides an easy-to-navigate interface, search functionality, and proper formatting that is not available in raw Markdown files.
 
