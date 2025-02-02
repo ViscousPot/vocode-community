@@ -1,6 +1,6 @@
 # Vocode Community Docs
 
-Welcome to the `docs` folder of the **Vocode Community** repository! This folder contains the Markdown source files for the official documentation of **Vocode**, an open-source project.
+Welcome to the `docs` folder of the **Vocode Community** repository! This folder contains the Markdown source files for the official documentation of **Vocode**.
 
 ## 📖 Where to Find the Documentation
 
