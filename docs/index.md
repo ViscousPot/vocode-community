@@ -1,5 +1,5 @@
 ---
-title: Vocode
+title: Welcome to Vocode!
 ---
 ## Your voice, your rules.
 
