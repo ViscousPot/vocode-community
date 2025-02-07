@@ -1,9 +1,6 @@
 ---
 title: "Transformers"
 ---
-<!-- This document provides an overview of the available text transformers, their descriptions, and key settings. -->
-
-<!-- ## Transformers -->
 
 ## To Lowercase
 Converts all alphabetical characters in the text to lowercase.
