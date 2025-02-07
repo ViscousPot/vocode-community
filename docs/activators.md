@@ -14,7 +14,7 @@ Triggers a hold-to-speak recording when pressed and held within the app.
 Provides two functionalities based on the volume buttons' interaction.
 
 ### Hold to Speak
-- **Function**: Initiates voice recording and transcription.
+- **Function**: Initiates voice transcription.
 - **Trigger**: Hold both volume up and volume down buttons simultaneously.
 
 ### Quick Capture
