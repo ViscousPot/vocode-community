@@ -3,7 +3,7 @@ function applyDecoration(text, decoration)
 end
 
 function add(settings, data)
-    if (settings["Content Template File Path"] and settings["Content Template File Path"] != "") then
+    if (settings["Content Template File Path"] and settings["Content Template File Path"] != '') then
       result = file.copy("Content Template File Path", "Target Folder Path", applyDecoration(data["text"], settings["Formatting"]))
       if not result then
         return false
