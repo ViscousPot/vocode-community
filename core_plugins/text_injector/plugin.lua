@@ -147,8 +147,8 @@ end
 function getInitialSettings()
     return {
         { name = "Target File Path", _description = "The file path of the target file to be edited." ,  type = "file" },
-        { name = "Formatting", _description = "Defines the prefix and suffix to apply to the text being inserted.", type = "prefix_suffix", _hintPrefix = "prefix+", _hintSuffix = "+suffix" },
+        { name = "Formatting", _description = "Defines the prefix and suffix to apply to the text being inserted.", type = "prefix_suffix", _defaultPrefix = "", _hintPrefix = "prefix+", _defaultSuffix = "", _hintSuffix = "+suffix" },
         { name = "Target String", _description = "The plugin will search for the first line containing this string to determine the location for editing." , type = "text", _default = "", _hint = "leave empty to edit relative to EOF" },
-        { name = "Edit Offset", _description = "An integer (+-) specifying the number of lines relative to the anchor string's location where the editing should occur.", type = "number", _hint = "-1" },
+        { name = "Edit Offset", _description = "An integer (+-) specifying the number of lines relative to the anchor string's location where the editing should occur.", type = "number", _default = -1, _hint = "-1" },
     }
 end
