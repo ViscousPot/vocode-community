@@ -27,7 +27,6 @@ function edit(settings, data, newText)
   return true
 end
 
-
 function remove(settings, data)
   result = file.delete("Target Folder Path", applyDecoration(data["text"], settings["Formatting"]))
   if not result then
