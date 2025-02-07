@@ -7,7 +7,7 @@ Vocode is the fastest and easiest way to record your voice and seamlessly export
 
 ## 🚀 Key Features
 
-### 🎙 Activators
+### 🎙 [Activators](activators)
 Activators let you start a recording quickly and intuitively. Whether you're in the app or using a system-wide shortcut, recording your voice has never been easier.
 
 - **In-App Button** – Start and stop recording with a simple tap.
@@ -16,7 +16,7 @@ Activators let you start a recording quickly and intuitively. Whether you're in 
 
 > **We’re especially proud of the volume button combo, making hands-free recording effortless and natural!**
 
-### 🔧 Transformers
+### 🔧 [Transformers](transformers/)
 Transform your transcriptions with powerful built-in tools:
 - Convert text to **uppercase** or **lowercase**.
 - **Remove punctuation** for cleaner results.
@@ -25,9 +25,7 @@ Transform your transcriptions with powerful built-in tools:
 
 ### 🔌 Plugins
 Extend Vocode’s functionality with core and community-developed plugins:
-- **Core Plugins** – Developed by us to enhance your experience.
-  - **Text Injector** – Write transcriptions into plaintext files.
-  - **Jeezy Petes** – Send transcriptions to ChatGPT and have responses read out loud.
+- [**Core Plugins**](plugins/core_plugins/) – Developed by us to enhance your experience.
 - **Community Plugins** – Create and share plugins using our [**Lua API**](developers/lua_apis/), available to all developers for free.
   - Check out the community plugins on [GitHub](https://github.com/ViscousPot/vocode-community).
 
