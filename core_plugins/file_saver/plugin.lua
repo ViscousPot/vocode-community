@@ -141,8 +141,8 @@ end
 
 function getInitialSettings()
     return {
-        { name = "Target Folder Path", _description = "The target folder where files should be created." ,  type = "file" },
+        { name = "Target Folder Path", _description = "The target folder where files should be created." ,  type = "folder" },
         { name = "Formatting", _description = "Defines a custom template for naming files based on transcribed text.", type = "formatting", _hintPrefix = "prefix", _hintSuffix = "suffix" },
-        { name = "Content Template Path", _description = "A predefined template file to structure the content of the saved files.", optional = true, type = "folder"},
+        { name = "Content Template File Path", _description = "A predefined template file to structure the content of the saved files.", optional = true, type = "file"},
     }
 end
