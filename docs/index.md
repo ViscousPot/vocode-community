@@ -11,7 +11,7 @@ Whether you're capturing ideas on the go, dictating tasks, or enhancing your wor
 
 ## 🚀 Key Features
 
-### 🎙 [Activators](activators)
+### [🎙](activators) Activators
 Activators let you start a recording quickly and intuitively. Whether you're in the app or using a system-wide shortcut, recording your voice has never been easier.
 
 - **In-App Button** – Start and stop recording with a simple tap.
@@ -20,7 +20,7 @@ Activators let you start a recording quickly and intuitively. Whether you're in 
 
 **We’re especially proud of the volume button combo, making hands-free recording effortless and natural!**
 
-### 🔧 [Transformers](transformers/)
+### [🔧](transformers/) Transformers
 Transform your transcriptions with powerful built-in tools:
 - Convert text to **uppercase** or **lowercase**.
 - **Remove punctuation** for cleaner results.
