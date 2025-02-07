@@ -1,5 +1,5 @@
 {
-  "core_version": "1.01.1",
+  "core_version": "1.01.2",
   "core": {
     "text_injector": {
       "name": "Text Injector",
