@@ -1,9 +1,13 @@
 ---
 title: Welcome to Vocode!
 ---
-## Your voice, your rules.
+## Your voice, your rules
 
-Vocode is the fastest and easiest way to record your voice and seamlessly export transcriptions into your notes and automations. Whether you're capturing ideas on the go, dictating tasks, or enhancing your workflow, Vocode empowers you with intuitive voice recording and powerful transcription features.
+#### 100% Offline & Private.
+
+Vocode is the fastest and easiest way to record your voice and seamlessly export transcriptions into your notes and automations—all while keeping your data completely **offline, secure, and private**. Your recordings and transcriptions **never leave your device**, ensuring absolute confidentiality. 
+
+Whether you're capturing ideas on the go, dictating tasks, or enhancing your workflow, Vocode empowers you with intuitive voice recording and powerful transcription features.
 
 ## 🚀 Key Features
 
@@ -30,7 +34,7 @@ Extend Vocode’s functionality with core and community-developed plugins:
   - Check out the community plugins on [GitHub](https://github.com/ViscousPot/vocode-community).
 
 ### 💾 Backup & Restore
-Never lose your transcriptions with **secure backup and restore options**.
+Keep your transcriptions safe with **secure local backup and restore options**—no cloud required.
 
 ## 🆓 Free vs. Pro
 | Feature          | Free Version  | Pro Version  |
@@ -39,7 +43,7 @@ Never lose your transcriptions with **secure backup and restore options**.
 | **Transformers** | ❌ None       | ✅ All       |
 | **Plugins**      | ✅ 1 only     | ✅ All       |
 
-Upgrade to **Vocode Pro** to unlock the full potential of voice recording and transcription automation!
+Upgrade to **Vocode Pro** to unlock the full potential of voice recording and transcription automation—while staying 100% offline and private!
 
 ---
 
