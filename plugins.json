@@ -1,10 +1,18 @@
 {
-  "core_version": "1.00.4",
+  "core_version": "1.00.5",
   "core": {
     "text_injector": {
       "name": "Text Injector",
       "description": "A file writer plugin that allows users to insert formatted text at a specific location in a target file, based on a search string and customizable offset.",
       "url": "./text_injector",
+      "permissions": [
+        "file"
+      ]
+    },
+    "file_saver": {
+      "name": "File Saver",
+      "description": "Creates text files in specified folders, using transcribed text as filenames and a template file for the contents.",
+      "url": "./file_saver",
       "permissions": [
         "file"
       ]
