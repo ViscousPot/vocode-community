@@ -14,13 +14,13 @@ function add(settings, data)
         return false
       end
 
-      file_close()
+      file.close()
     end
     return true
 end
 
 function edit(settings, data, newText)
-  result = file.rename("Target Folder Path", applyDecoration(data["text"], settings["Formatting"]), applyDecoration(newText, settings["Formatting"]))
+  result = file.move("Target Folder Path", applyDecoration(data["text"], settings["Formatting"]), "Target Folder Path", applyDecoration(newText, settings["Formatting"]))
   if not result then
     return false
   end
