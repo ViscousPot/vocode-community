@@ -14,7 +14,7 @@ Activators let you start a recording quickly and intuitively. Whether you're in 
 - **Volume Button Combination** – Press both volume buttons at once for a push-to-talk style recording. The recording stops automatically when you release the buttons.
 - **And more...**
 
-> **We’re especially proud of the volume button combo, making hands-free recording effortless and natural!**
+**We’re especially proud of the volume button combo, making hands-free recording effortless and natural!**
 
 ### 🔧 [Transformers](transformers/)
 Transform your transcriptions with powerful built-in tools:
