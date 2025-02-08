@@ -11,7 +11,7 @@ title: File API
 This is a comprehensive guide to the `File API` bindings available to Vocode Community Plugins. These bindings enable your plugins to interact with the device filesystem. -->
 
 ### 📄 `file.open(settingName)`
-Opens a file for reading or writing based on the settings provided.
+Opens a file for reading or writing based on the settings provided. (Creates the specified file if it does not already exist)
 
 #### Parameters:
 - `settingName` (string): The setting key for the file path in the `exporterItem`.
