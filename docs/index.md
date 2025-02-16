@@ -9,6 +9,20 @@ Vocode is the fastest and easiest way to record your voice and seamlessly export
 
 Whether you're capturing ideas on the go, dictating tasks, or enhancing your workflow, Vocode empowers you with intuitive voice recording and powerful transcription features.
 
+
+```mermaid
+block-beta
+   columns 7
+   A("Activators") space B("Text Entry") space D("Transformers") space E("Plugins")
+   space space C("Voice Transcription") space space space space
+
+   A --> B
+   A --> C
+   B --> D
+   C --> D
+   D --> E
+```
+
 ## 🚀 Key Features
 
 ### [🎙](activators) Activators
