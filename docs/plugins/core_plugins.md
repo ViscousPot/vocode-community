@@ -4,8 +4,8 @@ title: Core Plugins
 
 ## TextInjector
 The **TextInjector** plugin allows users to insert formatted text into a specified location in a target file. It searches for a specific string within the file and inserts the provided text at a user-defined offset relative to the found string. This makes it ideal for dynamic content insertion in configuration files, documentation, or other structured files.
-<details open>
-    <summary>(details)</summary>
+<details>
+    <summary>details...</summary>
     <p></p>
     <h3>Key Features</svg></a></h3>
     <ul>
@@ -21,7 +21,7 @@ The **TextInjector** plugin allows users to insert formatted text into a specifi
 ## IntentSender
 The **IntentSender** plugin enables users to send custom Android intents to specified apps, activities, services, or broadcast receivers. It allows seamless automation and integration with Tasker or other intent-handling applications by sending text and timestamps as extras.
 <details>
-    <summary>(details)</summary>
+    <summary>details...</summary>
     <p></p>
     <h3>Key Features</h3>
     <ul>
