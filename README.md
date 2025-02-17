@@ -1,6 +1,6 @@
 <div align="center">
 
-  <img src="https://github.com/user-attachments/assets/b18a689b-262b-4d00-8308-86629425f1d2" width="140" />
+  <img src="https://github.com/user-attachments/assets/5c14dd68-cd69-4b78-8968-13b2b7d4aa8a" width="140" />
 
   <h3>Vocode Community</h3>
   <h4>The central hub for open-source and community-driven resources for Vocode</h4>
