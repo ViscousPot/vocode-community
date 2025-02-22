@@ -72,44 +72,6 @@ function add(settings, data)
     return true
 end
 
-function edit(settings, data, newText)
-    result = file.open("Target File Path")
-    if not result then
-      return false
-    end
-    local position = 0
-    file.setPosition(0);
-
-    local originalText = applyDecoration(data["text"], settings["Formatting"])
-
-    while file.getPosition() < file.getLength() do
-      position = file.getPosition()
-      local line = file.readForwardLine();
-
-      if (line == originalText) then 
-        local endOfLinePosition = file.getPosition()
-
-        local fileLength = file.getLength()
-        
-        local remainingBytes = file.read(fileLength - endOfLinePosition)
-        file.setPosition(position)
-
-        local text = applyDecoration(newText, settings["Formatting"]) .. '\n'
-
-        file.writeString(text) 
-        file.writeString(remainingBytes)
-
-        file.truncate(fileLength + (string.len(text) - string.len(originalText .. '\n')))
-        file.close()
-        return true
-      end
-    end
-
-    file.close()
-    return true
-end
-
-
 function remove(settings, data)
     result = file.open("Target File Path")
     if not result then
