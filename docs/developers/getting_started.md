@@ -38,13 +38,6 @@ function add(settings, data)
     return true
 end
 
-function edit(settings, data, newText)
-    print(data["text"])
-    print(newText)
-    notification.toast(string.format('Changed "%s" to "%s"', data["text"], newText))
-    return true
-end
-
 function remove(settings, data)
     print(data["text"])
     notification.toast(string.format('Removed "%s"', data["text"]))
