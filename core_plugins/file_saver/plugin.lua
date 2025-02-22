@@ -19,14 +19,6 @@ function add(settings, data)
     return true
 end
 
-function edit(settings, data, newText)
-  result = file.move("Target Folder Path", applyDecoration(data["text"], settings["Formatting"]), "Target Folder Path", applyDecoration(newText, settings["Formatting"]))
-  if not result then
-    return false
-  end
-  return true
-end
-
 function remove(settings, data)
   result = file.delete("Target Folder Path", applyDecoration(data["text"], settings["Formatting"]))
   if not result then
