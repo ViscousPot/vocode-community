@@ -3,12 +3,6 @@ function add(settings, data)
     return true
 end
 
-function edit(settings, data, newText)
-    intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], newText, data["timestamp"])
-    return true
-end
-
-
 function remove(settings, data)
     intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], data["text"], data["timestamp"])
     return true
