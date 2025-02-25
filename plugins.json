@@ -9,6 +9,14 @@
         "file"
       ]
     },
+    "file_saver": {
+      "name": "File Saver",
+      "description": "Creates text files in specified folders, using transcribed text as filenames and a template file for the contents.",
+      "url": "./file_saver",
+      "permissions": [
+        "file"
+      ]
+    },
     "intent_sender": {
       "name": "Intent Sender",
       "description": "Sends arbitrary Android intents with customizable package name, class name, and action, including text as an extra, enabling integration with Tasker or other automation apps.",
