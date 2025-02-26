@@ -11,6 +11,7 @@
 ## Repository Contents
 - **Core Plugins**: The essential plugins that come with Vocode to provide the basic functionality.
 - **Community Plugins**: Plugins developed and shared by the community to extend Vocode's features.
+- **[Documentation](https://vocode-docs.viscouspotenti.al/)**: The Markdown source files for the official documentation of Vocode. 
 
 ## Contributing
 
