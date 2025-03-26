@@ -87,7 +87,15 @@ function remove(settings, data)
     position = file.getPosition()
     local line = file.readForwardLine();
 
-    if (line == originalText) then 
+    local firstLine = string.match(originalText, "([^\n]*)")
+    local count = 0
+    for _ in string.gmatch(originalText, "[^\n]*") do
+        count = count + 1
+    end
+    if (line == firstLine) then 
+      for i = 1,count  do
+        file.readForwardLine()
+      end 
       local endOfLinePosition = file.getPosition()
 
       local fileLength = file.getLength()
