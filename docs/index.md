@@ -12,15 +12,16 @@ Whether you're capturing ideas on the go, dictating tasks, or enhancing your wor
 
 ```mermaid
 block-beta
-   columns 3
-   A("Activators") space 
-   block:input_methods
+   columns 5
+   A("Activators"):2 space 
+   block:input_methods:2
      columns 1
+
     B("Text Entry") 
     C("Voice Entry")
   end 
-  space space space
-   D("Transformers") space E("Plugins")
+  space space space space space
+   D("Transformers"):2 space E("Plugins"):2
    
    A --> input_methods
    input_methods --> D
