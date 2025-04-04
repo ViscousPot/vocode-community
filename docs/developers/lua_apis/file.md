@@ -7,24 +7,25 @@ title: File API
 > [!info] Lua plugins in Vocode cannot access the Lua standard library
 > For security, plugins can only access core libraries and those tied to granted permissions.
 
-<!-- 
-This is a comprehensive guide to the `File API` bindings available to Vocode Community Plugins. These bindings enable your plugins to interact with the device filesystem. -->
+<!-- This is a comprehensive guide to the `File API` bindings available to Vocode Community Plugins. These bindings enable your plugins to interact with the device filesystem. -->
 
-### 📄 `file.open(settingName)`
-Opens a file for reading or writing based on the settings provided. (Creates the specified file if it does not already exist)
+### 📄 file.open(settingName, applyTemplateFn)
+Opens a file for reading or writing based on the provided settings item, applying a template function to modify the file name if provided. (Creates the specified file if it does not already exist) 
 
-#### Parameters:
+#### Parameters
 - `settingName` (string): The setting key for the file path in the `exporterItem`.
+
+- `applyTemplateFn` (string, optional): The name of the function to modify the file name.
 
 #### Example
 ```lua
-file.open("settings")
+file.open("settings", "templateFunction")
 ```
 
-### 📑 `file.setPosition(position)`
-Sets the file read/write position to the specified value.
+### 📑 file.setPosition(position)
+Sets the file read/write position to the specified value 
 
-#### Parameters:
+#### Parameters
 - `position` (number): The position to set in the file.
 
 #### Example
@@ -32,58 +33,50 @@ Sets the file read/write position to the specified value.
 file.setPosition(100)
 ```
 
-### `file.getPosition()`
-Gets the current position in the file.
+### file.getPosition() -> num
+Gets the current position in the file 
 
 #### Example
 ```lua
-local position = file.getPosition()
-print(position)
+file.getPosition() // -> 100
 ```
 
-### `file.getLength()`
-Gets the length of the file.
+### file.getLength() -> num
+Gets the length of the file 
 
 #### Example
 ```lua
-local length = file.getLength()
-print(length)
+file.getLength() // -> 100
 ```
 
-### `file.readForwardLine()`
-Reads a line of text forward from the current file position.
+### file.readForwardLine() -> str
+Reads a line of text forward from the current file position 
 
 #### Example
 ```lua
-local line = file.readForwardLine()
-print(line)
+file.readForwardLine() // -> "Hello World!!!"
 ```
 
-### `file.readBackwardLine()`
-Reads a line of text backward from the current file position.
+### file.readBackwardLine() -> str
+Reads a line of text backward from the current file position 
 
 #### Example
 ```lua
-local line = file.readBackwardLine()
-print(line)
+file.readBackwardLine() // -> "Hello World!!!"
 ```
 
-### `file.read(length)`
-Reads a specified number of bytes from the file.
-
-#### Parameters:
-- `length` (number): The number of bytes to read.
+### file.read(length)
+Reads a specified number of bytes from the file 
 
 #### Example
 ```lua
-local data = file.read(50)
-print(data)
+file.read(50)
 ```
 
-### 📝 `file.writeString(string)`
-Writes a string to the file.
+### 📝 file.writeString(string)
+Writes a string to the file 
 
-#### Parameters:
+#### Parameters
 - `string` (string): The string to write to the file.
 
 #### Example
@@ -91,22 +84,21 @@ Writes a string to the file.
 file.writeString("Hello, world!")
 ```
 
-### `file.countBytes(string)`
-Counts the number of bytes in a given string.
+### file.countBytes(string) -> int
+Counts the number of bytes in a given string 
 
-#### Parameters:
+#### Parameters
 - `string` (string): The string to count bytes for.
 
 #### Example
 ```lua
-local byteCount = file.countBytes("Hello")
-print(byteCount)
+file.countBytes("Hello") // -> 5
 ```
 
-### `file.truncate(length)`
-Truncates the file to a specific length.
+### file.truncate(length)
+Truncates the file to a specific length 
 
-#### Parameters:
+#### Parameters
 - `length` (number): The length to truncate the file to.
 
 #### Example
@@ -114,10 +106,14 @@ Truncates the file to a specific length.
 file.truncate(100)
 ```
 
-### 📃 `file.close()`
-Closes the file.
+### 📃 file.close(applyTemplateFn)
+Closes the file and optionally applies a template function to modify the file name before saving 
+
+#### Parameters
+- `applyTemplateFn` (string, optional): The name of the function to modify the file name before saving.
 
 #### Example
 ```lua
-file.close()
+file.close("templateFunction")
 ```
+
