@@ -9,7 +9,6 @@ Vocode is the fastest and easiest way to record your voice and seamlessly export
 
 Whether you're capturing ideas on the go, dictating tasks, or enhancing your workflow, Vocode empowers you with intuitive voice recording and powerful transcription features.
 
-
 ```mermaid
 block-beta
    columns 5
@@ -34,7 +33,8 @@ block-beta
 Activators let you start a recording quickly and intuitively. Whether you're in the app or using a system-wide shortcut, recording your voice has never been easier.
 
 - **In-App Button** – Start and stop recording with a simple tap.
-- **Volume Button Combination** – Press both volume buttons at once for a push-to-talk style recording. The recording stops automatically when you release the buttons.
+- **Volume Button Combination** – Press both volume buttons at once to open a text quick capture dialog, allowing you to enter text as long as the screen is on, even if the device is locked.
+- **Voice Entry** – Hold both volume buttons at once for a push-to-talk style recording. The recording stops automatically when you release the buttons.
 - **And more...**
 
 **We’re especially proud of the volume button combo, making hands-free recording effortless and natural!**
