@@ -3,10 +3,15 @@ title: "Activators"
 ---
 
 ## In-App Button Activator
-Triggers a hold-to-speak recording when pressed and held within the app.
+Provides two functionalities based on the in-app buttons' interaction.
 
-- **Function**: Initiates voice recording and transcription.
-- **Trigger**: Press and hold the in-app button.
+### Hold to Speak
+- **Function**: Initiates voice transcription.
+- **Trigger**: Hold the in-app button down.
+
+### Quick Capture
+- **Function**: Opens a text quick capture dialog.
+- **Trigger**: Press the in-app button momentarily.
 
 ---
 
