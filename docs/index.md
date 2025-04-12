@@ -1,8 +1,6 @@
 ---
-title: Welcome to Vocode!
+title: Your voice, your rules
 ---
-## Your voice, your rules
-
 #### 100% Offline & Private.
 
 Vocode is the fastest and easiest way to record your voice and seamlessly export transcriptions into your notes and automations—all while keeping your data completely **offline, secure, and private**. Your recordings and transcriptions **never leave your device**, ensuring absolute confidentiality. 
