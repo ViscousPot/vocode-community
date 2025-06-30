@@ -31,7 +31,7 @@ function add(settings, data)
   print(data["text"])
   local searchString = settings["Target String"]
 
-  result = file.open("Target File Path", applyTemplate, data)
+  result = file.open("Target File Path", "applyTemplate", data)
   if not result then
     return false
   end
@@ -49,7 +49,7 @@ function add(settings, data)
     end
 
     writeAtOffsetToFile(settings, data, editOffset)
-    file.close(applyTemplate, data)
+    file.close("applyTemplate", data)
     return true
   end
 
@@ -64,17 +64,17 @@ function add(settings, data)
       end
 
       writeAtOffsetToFile(settings, data, editOffset)
-      file.close(applyTemplate, data)
+      file.close("applyTemplate", data)
       return true
     end
   end
 
-  file.close(applyTemplate, data)
+  file.close("applyTemplate", data)
   return true
 end
 
 function remove(settings, data)
-  result = file.open("Target File Path", applyTemplate, data)
+  result = file.open("Target File Path", "applyTemplate", data)
   if not result then
     return false
   end
@@ -106,12 +106,12 @@ function remove(settings, data)
       file.writeString(remainingBytes)
       file.truncate(fileLength - string.len(originalText .. '\n'))
               
-      file.close(applyTemplate, data)
+      file.close("applyTemplate", data)
       return true
     end
   end
 
-  file.close(applyTemplate, data)
+  file.close("applyTemplate", data)
   return true
 end
 
