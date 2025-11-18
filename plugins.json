@@ -1,5 +1,5 @@
 {
-  "core_version": "2.00.2",
+  "core_version": "2.00.3",
   "core": {
     "text_injector": {
       "name": "Text Injector",
@@ -15,6 +15,9 @@
       "url": "./intent_sender",
       "permissions": [
         "intent"
+      ],
+      "platforms": [
+        "android"
       ]
     }
   },
