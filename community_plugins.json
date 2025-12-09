@@ -5,6 +5,12 @@
         "url": "ViscousPot/vocode_example-plugin",
         "permissions": [
             "notification"
+        ],
+        "name": "Todoist Minimal Plugin",
+        "description": "A minimal Vocode plugin to create and edit notes in Todoist ",
+        "url": "ViscousPot/vocode_todoist-minimal",
+        "permissions": [
+            "http"
         ]
     }
 }
