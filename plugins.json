@@ -1,5 +1,5 @@
 {
-  "core_version": "2.00.3",
+  "core_version": "2.00.2",
   "core": {
     "text_injector": {
       "name": "Text Injector",
@@ -15,21 +15,18 @@
       "url": "./intent_sender",
       "permissions": [
         "intent"
-      ],
-      "platforms": [
-        "android"
       ]
     }
   },
   "community": {
     "example": {
-      "name": "Example Plugin",
-      "description": "An example plugin that serves as boilerplate for Vocode plugin developers.",
-      "url": "ViscousPot/vocode_example-plugin",
+      "name": "Todoist Minimal Plugin",
+      "description": "A minimal Vocode plugin to create and edit notes in Todoist ",
+      "url": "ViscousPot/vocode_todoist-minimal",
       "permissions": [
-        "notification"
+        "http"
       ],
-      "version": "1.00.8"
+      "version": "1.00.0"
     }
   }
 }
