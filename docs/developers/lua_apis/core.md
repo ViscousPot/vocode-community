@@ -5,14 +5,46 @@ title: Core API
 > [!info] Lua plugins in Vocode cannot access the Lua standard library
 > For security, plugins can only access core libraries and those tied to granted permissions.
 
+## Json API
+
+### decode(string)
+Decodes a JSON string into a Lua table. 
+
+#### Parameters
+- `string` (string): The JSON string to decode.
+
+#### Example
+```lua
+decode('{"key": "value"}')
+```
+
+### encode(table)
+Encodes a Lua table into a JSON string. 
+
+#### Parameters
+- `table` (table): The Lua table to encode.
+
+#### Example
+```lua
+encode({ key = "value" })
+```
+
 ## 🌏 Global
 
-### tonumber(str) -> num
+### toNumber(str) -> num
+Converts a string to a number 
+
+#### Example
+```lua
+toNumber("1234") // -> 1234
+```
+
+### toInteger(str) -> int
 Converts a string to an integer 
 
 #### Example
 ```lua
-tonumber("1234") // -> 1234
+toInteger("1234") // -> 1234
 ```
 
 ### print(string)
