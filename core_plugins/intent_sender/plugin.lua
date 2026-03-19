@@ -1,10 +1,28 @@
 function add(settings, data)
-    intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], data["text"], data["timestamp"])
+    local ok, err = pcall(function()
+        intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], data["text"], data["timestamp"])
+    end)
+    if not ok then
+        if settings["Ignore Errors"] == "true" then
+            printError(err)
+        else
+            error(err)
+        end
+    end
     return true
 end
 
 function remove(settings, data)
-    intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], data["text"], data["timestamp"])
+    local ok, err = pcall(function()
+        intent.send(settings["Target"], settings["Package"], settings["Component"], settings["Action"], data["text"], data["timestamp"])
+    end)
+    if not ok then
+        if settings["Ignore Errors"] == "true" then
+            printError(err)
+        else
+            error(err)
+        end
+    end
     return true
 end
 
