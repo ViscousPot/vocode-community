@@ -25,4 +25,3 @@ Provides two functionalities based on the volume buttons' interaction.
 ### Quick Capture
 - **Function**: Opens a text quick capture dialog.
 - **Trigger**: Press both volume up and volume down buttons simultaneously.
-

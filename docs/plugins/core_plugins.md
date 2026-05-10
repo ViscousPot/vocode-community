@@ -10,7 +10,7 @@ The **TextInjector** plugin allows users to insert formatted text into a specifi
     <h3>Key Features</svg></a></h3>
     <ul>
     <li><strong>Target File Path</strong>: Define the location of the file where the text will be inserted.</li>
-    <li><strong>Text Formatting</strong>:  Add custom <strong>prefix</strong> and <strong>suffix</strong> to the inserted text for easy identification.</li>
+    <li><strong>Text Formatting</strong>: Add custom <strong>prefix</strong> and <strong>suffix</strong> to the inserted text for easy identification.</li>
     <li><strong>Search String</strong>: Choose the string in the file to use as a reference point for the insertion.</li>
     <li><strong>Edit Offset</strong>: Set a precise offset (positive or negative) from the found string for insertion location.</li>
     </ul>

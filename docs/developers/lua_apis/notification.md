@@ -10,7 +10,7 @@ title: Notification API
 <!-- This is a comprehensive guide to the `Notification API` bindings available to Vocode Community Plugins. These bindings enable your plugins to interact with the device filesystem. -->
 
 ### notification.toast(text)
-Displays a toast notification with the given text 
+Displays a toast notification with the given text
 
 #### Parameters
 - `text` (string): The message to display in the toast notification.
@@ -19,4 +19,3 @@ Displays a toast notification with the given text
 ```lua
 notification.toast("This is a toast message")
 ```
-

@@ -9,7 +9,7 @@ title: Create Your Own Plugin
 
 Vocode allows you to expand its capabilities by creating your own plugins using our [**Lua APIs**](developers/lua_apis). Whether you want to automate workflows, enhance transcriptions, or integrate with other tools, custom plugins give you full control over your voice-powered experience.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### 1️⃣ Set Up Your Development Environment
 To start building plugins for Vocode:
@@ -79,9 +79,8 @@ Once your plugin is ready, you can:
 - Use it privately for personal automation.
 - Share it with the **Vocode Community** on [GitHub](https://github.com/ViscousPot/vocode-community).
 
-## 🔗 Resources
+## Resources
 - [Lua API Documentation](developers/lua_apis/)
 - [Community Plugins](https://github.com/ViscousPot/vocode-community)
 
-Start building today and customize Vocode to fit your workflow! 🎙🚀
-
+Start building today and customize Vocode to fit your workflow!

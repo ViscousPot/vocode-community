@@ -2,15 +2,15 @@
 
 Welcome to the `docs` folder of the **Vocode Community** repository! This folder contains the Markdown source files for the official documentation of **Vocode**.
 
-## 📖 Where to Find the Documentation
+## Where to Find the Documentation
 
 While you can browse the Markdown files here, we strongly recommend visiting the official, built, and deployed version of the documentation for the best experience:
 
-🔗 **[Official Vocode Documentation](https://vocode-docs.viscouspotenti.al/)**
+ **[Official Vocode Documentation](https://vocode-docs.viscouspotenti.al/)**
 
 The deployed site provides an easy-to-navigate interface, search functionality, and proper formatting that is not available in raw Markdown files.
 
-## 🛠 Contributing to the Documentation
+## Contributing to the Documentation
 
 If you find any issues or have suggestions, feel free to contribute!
 
@@ -20,8 +20,7 @@ If you find any issues or have suggestions, feel free to contribute!
 
 <!-- For contribution guidelines, please refer to the [Contributing Guide](../CONTRIBUTING.md). -->
 
-## 📬 Need Help?
+## Need Help?
 If you have any questions, feel free to reach out via issues or discussions in the repository.
 
-Happy coding! 🚀
-
+Happy coding!

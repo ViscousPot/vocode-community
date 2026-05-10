@@ -10,7 +10,7 @@ title: Http API
 <!-- This is a comprehensive guide to the `Http API` bindings available to Vocode Community Plugins. These bindings enable your plugins to interact with the device filesystem. -->
 
 ### http.get(url, headers, body, cookies)
-Sends a GET request to the specified URL with optional headers and cookies. 
+Sends a GET request to the specified URL with optional headers and cookies.
 
 #### Parameters
 - `url` (string): The API endpoint to send the GET request to.
@@ -27,7 +27,7 @@ http.get("https://api.example.com/data", {"Authorization": "Bearer token"}, '', 
 ```
 
 ### http.post(url, headers, body, cookies)
-Sends a POST request to the specified URL with optional headers, body, and cookies. 
+Sends a POST request to the specified URL with optional headers, body, and cookies.
 
 #### Parameters
 - `url` (string): The API endpoint to send the POST request to.
@@ -44,7 +44,7 @@ http.post("https://api.example.com/data", {"Authorization": "Bearer token"}, '{"
 ```
 
 ### http.put(url, headers, body, cookies)
- 
+
 
 #### Example
 ```lua
@@ -52,10 +52,9 @@ http.put("https://api.example.com/data", {"Authorization": "Bearer token"}, '{"k
 ```
 
 ### http.delete(url, headers, cookies)
- 
+
 
 #### Example
 ```lua
 http.delete("https://api.example.com/data/1", {"Authorization": "Bearer token"}, {"session": "abcd1234"})
 ```
-
