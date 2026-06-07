@@ -76,5 +76,5 @@ Ready to get started? Explore the documentation to learn more about Vocode’s f
 
 ---
 
-[Back to Homepage](https://gitsync.viscouspotenti.al)<br />
-[Back to GitHub Repository](https://github.com/ViscousPot/GitSync)
+[Back to Homepage](https://vocode.viscouspotenti.al)<br />
+[Back to GitHub Repository](https://github.com/ViscousPot/vocode-community)
