@@ -1,4 +1,4 @@
-function applyTemplate(data, template)
+function applyTemplate(data, template, settings)
   print("/////applyTemplate")
   local text = data["text"]
   print(text)
@@ -6,8 +6,10 @@ function applyTemplate(data, template)
   print(timestamp)
   local timestampNum = toNumber(timestamp)
   print(timestampNum)
-  local dateString = os.date("yyyy-MM-dd", timestampNum)
-  local timeString = os.date("HH:mm:ss", timestampNum)
+  local dateFormat = settings and settings["Date Format"] or "yyyy-MM-dd"
+  local timeFormat = settings and settings["Time Format"] or "HH:mm:ss"
+  local dateString = os.date(dateFormat, timestampNum)
+  local timeString = os.date(timeFormat, timestampNum)
   print(string.interpolate(template, { text = text, date = dateString, time = timeString }))
   return string.interpolate(template, { text = text, date = dateString, time = timeString })
 end
@@ -28,9 +30,9 @@ function writeAtOffsetToFile(settings, data, editOffset)
 
   print(editOffset)
   if editOffset >= 0 then
-      file.writeString(applyTemplate(data, settings["Formatting"]) .. '\n')
+      file.writeString(applyTemplate(data, settings["Formatting"], settings) .. '\n')
   else
-      file.writeString('\n' .. applyTemplate(data, settings["Formatting"]))
+      file.writeString('\n' .. applyTemplate(data, settings["Formatting"], settings))
   end
   file.writeString(remainingBytes)
 end
@@ -91,7 +93,7 @@ function remove(settings, data)
   local position = 0
   file.setPosition(0)
 
-  local originalText = applyTemplate(data, settings["Formatting"])
+  local originalText = applyTemplate(data, settings["Formatting"], settings)
 
   print(originalText)
 
@@ -140,6 +142,8 @@ function getInitialSettings()
   return {
       { name = "Target File Path", _description = "The file path of the target file to be edited." ,  type = "file", _customPathTemplateOptions = { date = "Formatted date of creation", text = "Text being inserted", time = "Formatted time of creation" } },
       { name = "Formatting", _description = "Defines the formatting to apply to the text being inserted into the file.", type = "formatting", _defaultValue = "__{{text}}__", _templateOptions = { text = "Text being inserted", time = "Formatted time of creation", date = "Formatted date of creation" } },
+      { name = "Date Format", _description = "The strftime format used for the date placeholder.", type = "text", _default = "yyyy-MM-dd" },
+      { name = "Time Format", _description = "The strftime format used for the time placeholder.", type = "text", _default = "HH:mm:ss" },
       { name = "Target String", _description = "The plugin will search for the first line containing this string to determine the location for editing." , type = "text", _default = "", _hint = "leave empty to edit relative to EOF" },
       { name = "Edit Offset", _description = "An integer (+-) specifying the number of lines relative to the anchor string's location where the editing should occur.", type = "number", _default = -1, _hint = "-1" },
   }
