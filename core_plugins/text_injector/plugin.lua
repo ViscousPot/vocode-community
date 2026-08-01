@@ -47,7 +47,7 @@ function add(settings, data)
   if not result then
     return false
   end
-  
+
   local editOffset = toNumber(settings["Edit Offset"]) or 0
 
   local position = 0
@@ -69,7 +69,7 @@ function add(settings, data)
     position = file.getPosition()
     local line = file.readForwardLine()
 
-    if (string.find(line, searchString)) then 
+    if (string.find(line, searchString)) then
 
       if editOffset < 0 then
           file.setPosition(position)
@@ -109,11 +109,11 @@ function remove(settings, data)
     end
 
     print(count)
-    if (line == firstLine) then 
+    if (line == firstLine) then
       if (count > 1) then
         for i = 1,count-1  do
           print(file.readForwardLine())
-        end 
+        end
       end
       local endOfLinePosition = file.getPosition()
 
@@ -128,7 +128,7 @@ function remove(settings, data)
       file.writeString(remainingBytes)
 
       file.truncate(toInteger(math.max(fileLength - string.len(originalText .. '\n'), 0)))
-              
+
       file.close("applyTemplate", data)
       return true
     end
@@ -142,9 +142,9 @@ function getInitialSettings()
   return {
       { name = "Target File Path", _description = "The file path of the target file to be edited." ,  type = "file", _customPathTemplateOptions = { date = "Formatted date of creation", text = "Text being inserted", time = "Formatted time of creation" } },
       { name = "Formatting", _description = "Defines the formatting to apply to the text being inserted into the file.", type = "formatting", _defaultValue = "__{{text}}__", _templateOptions = { text = "Text being inserted", time = "Formatted time of creation", date = "Formatted date of creation" } },
-      { name = "Date Format", _description = "The strftime format used for the date placeholder.", type = "text", _default = "yyyy-MM-dd" },
-      { name = "Time Format", _description = "The strftime format used for the time placeholder.", type = "text", _default = "HH:mm:ss" },
       { name = "Target String", _description = "The plugin will search for the first line containing this string to determine the location for editing." , type = "text", _default = "", _hint = "leave empty to edit relative to EOF" },
       { name = "Edit Offset", _description = "An integer (+-) specifying the number of lines relative to the anchor string's location where the editing should occur.", type = "number", _default = -1, _hint = "-1" },
+      { name = "Date Format", _description = "The strftime format used for the date placeholder.", type = "text", _default = "yyyy-MM-dd", _hint = "yyyy-MM-dd" },
+      { name = "Time Format", _description = "The strftime format used for the time placeholder.", type = "text", _default = "HH:mm:ss", _hint = "HH:mm:ss" },
   }
 end
